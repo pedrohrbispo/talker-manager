@@ -10,10 +10,10 @@ const HTTP_OK_STATUS = 200;
 const PORT = '3000';
 startToken();
 
-const consolareque = (req, res, next) => {
-  console.log(req.params);
-  next();
-};
+// const consolareque = (req, res, next) => {
+//   console.log(req.params);
+//   next();
+// };
 
 // não remova esse endpoint, e para o avaliador funcionar
 app.get('/', (_request, response) => {
