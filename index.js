@@ -6,6 +6,11 @@ const {
   validatePassword,
   validateEmail,
   startToken,
+  validateAge,
+  validateTalk,
+  validateName,
+  createTalker,
+  validateToken,
 } = require('./middleware/index');
 
 const app = express();
@@ -21,6 +26,7 @@ startToken();
 // };
 
 // não remova esse endpoint, e para o avaliador funcionar
+
 app.get('/', (_request, response) => {
   response.status(HTTP_OK_STATUS).send();
 });
@@ -31,7 +37,7 @@ app.get('/talker/:id', findInFile);
 
 app.post('/login', validatePassword, validateEmail);
 
-//  app.post('/talker', createTalker);
+app.post('/talker', validateToken, validateName, validateAge, validateTalk, createTalker);
 
 app.listen(PORT, () => {
   console.log('Online');

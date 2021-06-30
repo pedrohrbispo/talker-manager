@@ -30,19 +30,20 @@ const verifyIfIsnotEmpty = (password, res) => {
     if (password.length === 0) {
       return res.status(400).send({ message: 'O campo "password" é obrigatório' });
     }
-    return res.status(400).json({ message: 'O "password" deve ter pelo menos 6 caracteres' });
+    if (password.length < 6) {
+      return res.status(400).json({ message: 'O "password" deve ter pelo menos 6 caracteres' });
+    }
 };
 
 // Valida a senha
 const validatePassword = async (req, res, next) => {
   const { password } = req.body;
   if (password === undefined) {
-    res.status(400).json({ message: 'O campo "password" é obrigatório' });
-  } else {
-    verifyIfIsnotEmpty(password, res);
-    if (password.length > 6) {
+    return res.status(400).json({ message: 'O campo "password" é obrigatório' });
+  }
+  verifyIfIsnotEmpty(password, res);
+  if (password.length > 6) {
       next();
-    }
   }
 };
 
