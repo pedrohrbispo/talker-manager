@@ -1,13 +1,14 @@
 const { readFile } = require('./readFile');
 const findInFile = require('./findOne');
-const { validatePassword } = require('./validateLogin');
-const { validateEmail } = require('./validateLogin');
-const { tokenToSend } = require('./validateLogin');
+const { validatePassword, validateEmail, getToken, startToken } = require('./validateLogin');
+const { createTalker } = require('./createTalker');
 
 module.exports = {
   readFile,
   findInFile,
   validatePassword,
   validateEmail,
-  tokenToSend,
+  getToken,
+  startToken,
+  createTalker,
 };
