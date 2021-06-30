@@ -21,9 +21,9 @@ const startToken = async () => {
 const getToken = () => tokenToSend;
 
 // Valida o email
-function validEmail (email){
-  return /^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?$/.test(email)
-};
+function validEmail(email) {
+  return /^[\w+.]+@\w+\.\w{2,}(?:\.\w{2})?$/.test(email);
+}
 
 // Verifica se a senha tem o a quantidade certa de digitos
 const verifyIfIsnotEmpty = (password, res) => {

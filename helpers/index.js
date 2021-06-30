@@ -47,7 +47,7 @@ const verifyTalkRate = (rate) => {
   return true;
 };
 
-const verifyTalkRate = (talk) => {
+const verifyTalk = (talk) => {
   const { rate, watchedAt } = talk;
   if ((!rate && rate !== 0) !== !watchedAt) return false
   return true;
@@ -63,4 +63,5 @@ module.exports = {
   verifyIfExist,
   verifyIfDateIsAllowed,
   verifyTalkRate,
+  verifyTalk,
 }

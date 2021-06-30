@@ -4,7 +4,9 @@ const {
   validAgeIsFill,
   ageAllowed,
   verifyIfExist,
-  verifyIfDateIsAllowed
+  verifyIfDateIsAllowed,
+  verifyTalk,
+  verifyTalkRate,
 } = require('../helpers');
 // const { getToken } = require('./validateLogin');
 
@@ -14,9 +16,11 @@ const createTalker = (req, res) => {
   //  validToken(token);
   if (!verifyIfExist(name)) {
     return res.status(400).json({ message: 'O campo "name" é obrigatório' });
-  } else if (!verifyIfExist(age)) {
+  }
+  if (!verifyIfExist(age)) {
     return res.status(400).json({ message: 'O campo "age" é obrigatório' });
-  } else if (!verifyIfExist(talk)) {
+  }
+  if (!verifyIfExist(talk)) {
     return res.status(400).json({
       message: 'O campo "talk" é obrigatório e "watchedAt" e "rate" não podem ser vazios'
     });
@@ -44,6 +48,7 @@ const createTalker = (req, res) => {
       message: 'O campo "watchedAt" deve ter o formato "dd/mm/aaaa"'
     });
   }
+  verifyTalkRate();
  
   //  res.status(200);
 };
