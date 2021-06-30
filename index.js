@@ -5,7 +5,6 @@ const {
   findInFile,
   validatePassword,
   validateEmail,
-  createTalker,
   startToken,
 } = require('./middleware/index');
 

@@ -22,7 +22,7 @@ const validNameIsFill = (name) => {
 };
 
 const validAgeIsFill = (age) => {
-  if (age.length === 0) return false 
+  if (age.length === 0) return false;
   return true;
 };
 
@@ -32,7 +32,7 @@ const ageAllowed = (age) => {
 };
 
 const verifyIfExist = (param) => {
-  if (param === undefined) return false
+  if (param === undefined) return false;
 };
 
 // const verifyIfDateIsAllowed = (date) => {
@@ -61,7 +61,6 @@ module.exports = {
   validAgeIsFill,
   ageAllowed,
   verifyIfExist,
-  verifyIfDateIsAllowed,
   verifyTalkRate,
   verifyTalk,
 };
