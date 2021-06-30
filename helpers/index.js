@@ -17,12 +17,12 @@ const validNameLength = (name) => {
 };
 
 const validNameIsFill = (name) => {
-  if (name.length === 0) false
+  if (name.length === 0) return false;
   return true;
 };
 
 const validAgeIsFill = (age) => {
-  if (age.length === 0) false 
+  if (age.length === 0) return false 
   return true;
 };
 
@@ -35,12 +35,12 @@ const verifyIfExist = (param) => {
   if (param === undefined) return false
 };
 
-const verifyIfDateIsAllowed = (date) => {
-  const regexDate = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
-  const dateOk = regexDate.test(date);
-  if (!dateOk) return false;
-  return true;
-};
+// const verifyIfDateIsAllowed = (date) => {
+//   const regexDate = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+//   const dateOk = regexDate.test(date);
+//   if (!dateOk) return false;
+//   return true;
+// };
 
 const verifyTalkRate = (rate) => {
   if (!Number.isInteger(rate) || rate < 1 || rate > 5) return false;
@@ -49,7 +49,7 @@ const verifyTalkRate = (rate) => {
 
 const verifyTalk = (talk) => {
   const { rate, watchedAt } = talk;
-  if ((!rate && rate !== 0) !== !watchedAt) return false
+  if ((!rate && rate !== 0) !== !watchedAt) return false;
   return true;
 };
 
@@ -64,4 +64,4 @@ module.exports = {
   verifyIfDateIsAllowed,
   verifyTalkRate,
   verifyTalk,
-}
+};

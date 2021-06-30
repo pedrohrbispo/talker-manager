@@ -32,7 +32,7 @@ app.get('/talker/:id', findInFile);
 
 app.post('/login', validatePassword, validateEmail);
 
-app.post('/talker', createTalker);
+//  app.post('/talker', createTalker);
 
 app.listen(PORT, () => {
   console.log('Online');
