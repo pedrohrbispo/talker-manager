@@ -1,9 +1,4 @@
-const fs = require('fs').promises;
-
-async function readFileJson() {
-  const file = await fs.readFile('talker.json', 'utf-8');
-  return file;
-}
+const { readFileJson } = require('../helpers');
 
 const readFile = async (req, res) => {
   try {
