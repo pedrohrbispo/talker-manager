@@ -6,6 +6,7 @@ const validateToken = require('./validateToken');
 const validateAge = require('./validateAge');
 const validateTalk = require('./validateTalk');
 const createTalker = require('./createTalker');
+const updateTalker = require('./updateTalker');
 
 module.exports = {
   readFile,
@@ -19,4 +20,5 @@ module.exports = {
   validateName,
   validateToken,
   createTalker,
+  updateTalker,
 };
