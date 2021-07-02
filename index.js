@@ -13,6 +13,7 @@ const {
   validateToken,
   updateTalker,
   deleteTalker,
+  searchTerm,
 } = require('./middleware/index');
 
 const app = express();
@@ -23,7 +24,7 @@ const PORT = '3000';
 startToken();
 
 // const consolareque = (req, res, next) => {
-//   console.log(req.headers.authorization);
+//   console.log(req.query);
 //   next();
 // };
 
@@ -32,6 +33,8 @@ startToken();
 app.get('/', (_request, response) => {
   response.status(HTTP_OK_STATUS).send();
 });
+
+app.get('/talker/search', validateToken, searchTerm, readFile);
 
 app.get('/talker', readFile);
 

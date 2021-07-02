@@ -13,7 +13,7 @@ const createTalker = async (req, res) => {
     file.push(newFile);
     await writFileJson(file);
 
-    res.status(200).send(newFile);
+    res.status(201).send(newFile);
   } catch (e) {
     console.log(e);
     res.status(200).json({ message: 'Não foi possivel adicionar um novo item no arquivo' });

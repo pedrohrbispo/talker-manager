@@ -8,6 +8,7 @@ const validateTalk = require('./validateTalk');
 const createTalker = require('./createTalker');
 const updateTalker = require('./updateTalker');
 const deleteTalker = require('./deleteTalker');
+const searchTerm = require('./searchTerm');
 
 module.exports = {
   readFile,
@@ -23,4 +24,5 @@ module.exports = {
   createTalker,
   updateTalker,
   deleteTalker,
+  searchTerm,
 };
