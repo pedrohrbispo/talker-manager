@@ -13,6 +13,7 @@ const {
   validateToken,
   updateTalker,
   deleteTalker,
+  searchTerm,
 } = require('./middleware/index');
 
 const app = express();
@@ -33,7 +34,7 @@ app.get('/', (_request, response) => {
   response.status(HTTP_OK_STATUS).send();
 });
 
-//  app.get('/talker/search', validateToken, searchTerm, readFile);
+app.get('/talker/search', validateToken, searchTerm, readFile);
 
 app.get('/talker', readFile);
 
