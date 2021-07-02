@@ -12,7 +12,6 @@ async function writFileJson(newfile) {
 
 const validToken = (token) => {
     const currentToken = getToken();
-    console.log(currentToken);
     if (token !== currentToken) return false;
     return true;
 };
