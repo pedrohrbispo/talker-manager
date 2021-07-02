@@ -13,7 +13,6 @@ const {
   validateToken,
   updateTalker,
   deleteTalker,
-  searchTerm,
 } = require('./middleware/index');
 
 const app = express();
